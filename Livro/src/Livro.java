@@ -63,18 +63,27 @@ public class Livro {
                                         "Voce vai para a guilda e encontra um aviso rasgado sobre tomar cuidado com alguma coisa que voce só consegue identificar que haviam 5 letras ali.");
                         int d20 = dado.nextInt(19) + 1;
                         if (d20 >= 10) {
+                                Armas espadaKarine = new Armas("Fiodor", 120, 5);
                                 Personagem Karine = new Personagem("Karine", 100, 50);
+                                Karine.setObjetoDeDefesa(espadaKarine);
+
                                 System.out.println(
                                                 "Voce entra na guilda e encontra um ambiente caótico, com diversos homens brigando e bebendo. Mas uma figura se destaca no ambiente, no balcão há uma mulher loira e com músculos aparentes, a qual parece impor respeito naquele local. Voce vai falar com ela e se apresenta. O nome dela é Karine, e ela explica que ela é líder da guilda");
                                 System.out.println(
-                                                "Karine fica curiosa com sua presença e te convida para uma luta 'na brincadeira' na arena. Voce aceita? 1 para sim e 0 para não");
+                                                "Karine fica curiosa com sua presença e te oferece uma bebida. Voce aceita? 1 para sim e 0 para não");
+                                Bebidas coquinha = new Bebidas("Coquinha", d20, false);
+                                System.out.println(
+                                                "Em sequência, desafia você para uma luta. Voce aceita? 0 para sim e 1 para não.");
 
                                 int escolha_b1 = escaneador.nextInt();
                                 if (escolha_b1 == 1) {
                                         System.out.println(
                                                         "Voces chegam em um lugar semelhante a um coliseu romano sem público, Karine diz para voce se preparar e ir para o lado oposto da arena.");
+                                        System.out.println("Ela possui uma espada enorme com " + espadaKarine.getDano()
+                                                        + " de dano");
                                         System.out.println(
                                                         "Voce não entende bem o que aconteceu, mas sua cabeça está separada do seu corpo.");
+                                        espadaKarine.atacar(MathYeus);
                                 } else {
                                         System.out.println(
                                                         "Os outros homens ficam irritados por voce ter rejeitado o convite de Karine, voce é arremessado contra a parede e apaga.");
