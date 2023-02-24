@@ -3,6 +3,15 @@ public class Personagem {
     private int vida;
     private int forca;
     private Armas objetoDeDefesa;
+    private int energia;
+
+    public int getEnergia() {
+        return energia;
+    }
+
+    public void setEnergia(int energia) {
+        this.energia = energia;
+    }
 
     public String getNome() {
         return nome;

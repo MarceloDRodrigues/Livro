@@ -4,9 +4,12 @@ import java.util.Random;
 public class Livro {
         public static void main(String[] args) throws Exception {
                 Personagem MathYeus = new Personagem("Math Yeus", 5, 2);
+                String texto1 = "Math Yeus acorda em um simples local chamado Villace zamo, sem ter qualquer outra memoria do que fez de sua vida até então.Ao observar o local, encontra dois possiveis destinos para se situar sobre onde ele se encontra. A direita, tem-se um lugar semelhante a um enorme castelo, no qual a frente pasta uma vaca gigantesca A esquerda, vê que há algo semelhante a uma guilda, com alguns avisos na parede, mas voce não consegue ler.";
+
                 MathYeus.exibirStatus();
                 Scanner escaneador = new Scanner(System.in);
                 Random dado = new Random();
+
                 System.out.println(
                                 "Esse é um livro que conta a historia de Math Yeus em sua provável desventura em um mundo um tanto quanto esquisito.");
                 System.out.println(
@@ -14,12 +17,7 @@ public class Livro {
                 System.out.println(
                                 "Essas escolhas serão tomadas por meio de decisões binários, com o digito O ou o digito 1, indicados respectivamente");
                 System.out.println("----------------------------------------------------------------------");
-                System.out.println(
-                                "Math Yeus acorda em um simples local chamado Villace zamo, sem ter qualquer outra memoria do que fez de sua vida até então.");
-                System.out.println(
-                                "Ao observar o local, encontra dois possiveis destinos para se situar sobre onde ele se encontra. A direita, tem-se um lugar semelhante a um enorme castelo, no qual a frente pasta uma vaca gigantesca");
-                System.out.println(
-                                "A esquerda, vê que há algo semelhante a uma guilda, com alguns avisos na parede, mas voce não consegue ler.");
+
                 System.out.println("Digite 1 para ir ao Castelo e 0 para ir a Guilda!!!!");
                 int escolha = escaneador.nextInt();
 
