@@ -2,8 +2,7 @@ public class Personagem {
     private String nome;
     private int vida;
     private int forca;
-    private Armas objetoDeDefesa;
-    private int energia;
+    private int energia = 100;
 
     public int getEnergia() {
         return energia;
@@ -37,19 +36,20 @@ public class Personagem {
         this.forca = forca;
     }
 
-    public Armas getObjetoDeDefesa() {
-        return objetoDeDefesa;
-    }
-
-    public void setObjetoDeDefesa(Armas objetoDeDefesa) {
-        this.objetoDeDefesa = objetoDeDefesa;
-    }
+    
 
     public Personagem(String nome, int vida, int forca) {
         this.nome = nome;
         this.vida = vida;
         this.forca = forca;
-        this.objetoDeDefesa = objetoDeDefesa;
+    }
+
+    public void alteracaoEnergia(int valor){
+        if (this.energia>0){
+        this.energia -= valor;
+    }else{
+        System.out.println("A energia não pode ser menor que 0.");
+    }
     }
 
     public void exibirStatus() {
@@ -57,7 +57,5 @@ public class Personagem {
                 .println("Os seus status são: Nome: " + this.nome + ", vida: " + this.vida + ", forca: " + this.forca);
     }
 
-    public void morrer() {
-        System.out.println(getNome() + " morreu.");
-    }
+    
 }
