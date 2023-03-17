@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 
 public class Livro {
-        public static void main(String[] args) throws Exception {
+        public static void main(String[] args) {
                 Personagem MathYeus = new Personagem("Math Yeus", 5, 2);
-
-                MathYeus.exibirStatus();
-               
-               
-
                 String instrucao = "Esse é um livro que conta a historia de Math Yeus em sua provável desventura em um mundo um tanto quanto esquisito. Essa história interativa irá contar com o auxilio do usuário na tomada de decisões. Essas escolhas serão tomadas por meio de decisões binários, com o digito O ou o digito 1, indicados respectivamente. Math Yeus acorda em um simples local chamado Villace zamo, sem ter qualquer outra memoria do que fez de sua vida até então.Ao observar o local, encontra dois possiveis destinos para se situar sobre onde ele se encontra. A direita, tem-se um lugar semelhante a um enorme castelo, no qual a frente pasta uma vaca gigantesca A esquerda, vê que há algo semelhante a uma guilda, com alguns avisos na parede, mas voce não consegue ler. ";
                 String texto1a = "Voce vai para o castelo e na frente voce observa novamente a vaca, com músculos inacreditavelmente grandes. Por fim, voce se pergunta como ela ficou desse jeito. A vaca come a grama com uma intensidade assustadora e voce, por alguma razão, cogita comer a grama também.";
                 String texto2a = "Voce come a grama e nada acontece. Por acaso voce é idiota? A vaca aparentemente está irritada por voce ter comido a grama dela e parte pra cima de voce. Acertando-o no estômago com um impacto que você voa alguns bons metros.";
@@ -20,14 +15,14 @@ public class Livro {
                
               
               
-                Capitulo capitulo1a = new Capitulo("Capitulo 1", texto1a, MathYeus);
-                Capitulo capitulo1b = new Capitulo("Capitulo 1", texto1b , MathYeus);
-                Capitulo capitulo2a = new Capitulo("Capitulo 2", texto2a, MathYeus);
-                Capitulo capitulo3a = new Capitulo("Capitulo 3", texto3a, MathYeus);
-                Capitulo capitulo3b = new Capitulo("Capitulo 3", texto3b, MathYeus);
-                Capitulo capitulo4a = new Capitulo("Capitulo 4", texto4a, MathYeus);
-                Capitulo capitulo4ab = new Capitulo("Capitulo 4", texto4ab, MathYeus);
-                Capitulo capitulo4b = new Capitulo("Capitulo 4", texto4b, MathYeus);
+                Capitulo capitulo1a = new Capitulo("Chegando ao Castelo", texto1a, MathYeus);
+                Capitulo capitulo1b = new Capitulo("Chegando a Guilda", texto1b , MathYeus);
+                Capitulo capitulo2a = new Capitulo("A pior decisão", texto2a, MathYeus);
+                Capitulo capitulo3a = new Capitulo("A melhor decisão", texto3a, MathYeus);
+                Capitulo capitulo3b = new Capitulo("O confronto", texto3b, MathYeus);
+                Capitulo capitulo4a = new Capitulo("Efeito ryonmen", texto4a, MathYeus);
+                Capitulo capitulo4ab = new Capitulo("A falta de respeito", texto4ab, MathYeus);
+                Capitulo capitulo4b = new Capitulo("Conhecendo o maior", texto4b, MathYeus);
                 
                 Escolha temp1EscolhaCap0 = new Escolha();
                 temp1EscolhaCap0.adicionar("0 para ir ao Castelo", capitulo1a);
@@ -38,8 +33,7 @@ public class Livro {
                 escolhasCap0.add(temp0EscolhaCap0);
                 Capitulo raiz = new Capitulo("Introdução", instrucao, MathYeus);
                 raiz.escolhas = escolhasCap0;
-                System.out.println(escolhasCap0);
-
+        
                 Escolha temp1EscolhaCap1 = new Escolha();
                 temp1EscolhaCap1.adicionar("1 para comer a grama", capitulo2a);
                 Escolha temp0EscolhaCap1 = new Escolha();
@@ -74,3 +68,4 @@ public class Livro {
 
         }
 }
+
