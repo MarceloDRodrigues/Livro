@@ -2,43 +2,43 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Capitulo {
-    String nome;
-    String texto;
-    Personagem personagem;
-    int alteracaoEnergia;
-    ArrayList<Escolha> escolhas;
+    public String nome;
+    private String texto;
+    public Personagem personagem;
+    public ArrayList<Escolha> escolhas;
 
     public Capitulo(String nome, String texto,
             Personagem personagem) {
         this.nome = nome;
         this.texto = texto;
         this.personagem = personagem;
-      
-
+         
     }
    
 
     public void executar(){
-        System.out.println("Canso");
-        boolean condicao = escolhas != null;
+        try{
+        boolean condicao = (escolhas != null);
         Capitulo atual = this;
         while(condicao){
         
-        if (!condicao){
-            System.out.println("O jogo chegou ao fim. Parabéns por ter completado.");
-        }else{
-            System.out.println("KKKFKFKFK");
+        if (condicao){
             atual.mostrar();
-            int escolhaTemp = atual.escolher();
+            int escolhaTemp = atual.escolher(); 
             atual = atual.escolhas.get(escolhaTemp).getProximo();
-            
-            //escolha.getProximo é um capitulo.
+            atual.personagem.alteracaoEnergia(20);
+            }
            
         }
         }
-        }
+    catch(NullPointerException e){
+        System.out.println("O jogo chegou ao fim. Parabéns por ter completado.");
+    }
+}
+        
     
-        public void mostrar() {       
+        public void mostrar() {  
+            System.out.println("Titulo: "+ this.nome);     
             System.out.println(this.texto);
 
             }
@@ -50,7 +50,7 @@ public class Capitulo {
         Scanner escaneador = new Scanner(System.in);
         for (int i = 0; i < escolhas.size(); i++){
        
-        System.out.println(  this.escolhas.get(i).getTexto());
+        System.out.println(this.escolhas.get(i).getTexto());
         }
         escolha = escaneador.nextInt();
         
@@ -64,10 +64,12 @@ public class Capitulo {
 
         }}
         catch(NullPointerException e){
-            e.printStackTrace();
+            
+            
         } 
         
         return escolha;
         
       }
 }
+
