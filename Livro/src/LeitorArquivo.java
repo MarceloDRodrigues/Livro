@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class LeitorArquivo {
     
@@ -12,8 +13,8 @@ public class LeitorArquivo {
             }
             leitorArquivo.close();
         
-        }catch(Exception e){
-            e.getMessage();
+        }catch(IOException e){
+            System.out.println("Erro ao tentar ler o arquivo" + e.getMessage());
         } 
     }
 }
