@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class Livro {
         public static void main(String[] args) {
                 Personagem MathYeus = new Personagem("Math Yeus", 5, 2);
@@ -62,9 +61,7 @@ public class Livro {
 
                 capitulo1b.escolhas = escolhasCap1b;
 
-                
                 raiz.executar();
-                
 
         }
 }

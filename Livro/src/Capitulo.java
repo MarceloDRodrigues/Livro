@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,6 +26,7 @@ public class Capitulo {
         while(condicao){
         
         if (condicao){
+            lerArquivo();
             atual.mostrar();
             int escolhaTemp = atual.escolher(); 
             atual = atual.escolhas.get(escolhaTemp).getProximo();
@@ -38,11 +42,30 @@ public class Capitulo {
         
     
         public void mostrar() {  
+                            
+
             System.out.println("Titulo: "+ this.nome);     
             System.out.println(this.texto);
 
             }
         
+
+    private void lerArquivo() {
+        try( BufferedReader leitorArquivo = new BufferedReader(new FileReader("rsc/conteudocapitulos.txt"))){
+           
+            String linha;
+            System.out.println("Cams");            
+            while((linha = leitorArquivo.readLine()) != null){
+                System.out.println(linha);
+                System.out.println("Entra?");
+            }
+        
+        }catch(IOException e){
+            e.getMessage();
+        } 
+    }
+        
+
 
     public int escolher() {
         int escolha = 100;
